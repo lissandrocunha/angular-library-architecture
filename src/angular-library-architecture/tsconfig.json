@@ -9,6 +9,16 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
+    "paths": {
+      "@my-org/lpc-lib/*": [
+        "projects/lpc-lib/*",
+        "projects/lpc-lib"
+      ],
+      "@my-org/some-lib": [
+        "dist/lpc-lib/*",
+        "dist/lpc-lib"
+      ]
+    },
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
