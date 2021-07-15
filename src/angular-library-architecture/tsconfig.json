@@ -2,6 +2,24 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "@app/app-lib/*": [
+        "projects/app-lib/app-lib/*",
+        "projects/app-lib"
+      ],
+      "@app/app-lib": [
+        "dist/app-lib/app-lib/*",
+        "dist/app-lib"
+      ],
+      "@app/app-lib-core/*": [
+        "projects/app-lib-core/app-lib-core/*",
+        "projects/app-lib-core"
+      ],
+      "@app/app-lib-core": [
+        "dist/app-lib-core/app-lib-core/*",
+        "dist/app-lib-core"
+      ]
+    },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
@@ -9,16 +27,6 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
-    "paths": {
-      "@my-org/lpc-lib/*": [
-        "projects/lpc-lib/*",
-        "projects/lpc-lib"
-      ],
-      "@my-org/some-lib": [
-        "dist/lpc-lib/*",
-        "dist/lpc-lib"
-      ]
-    },
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,

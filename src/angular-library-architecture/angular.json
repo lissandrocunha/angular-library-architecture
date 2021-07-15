@@ -3,23 +3,23 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "lpc-lib": {
+    "app-lib": {
       "projectType": "library",
-      "root": "projects/lpc-lib",
-      "sourceRoot": "projects/lpc-lib/src",
-      "prefix": "my-org",
+      "root": "projects/app-lib",
+      "sourceRoot": "projects/app-lib/src",
+      "prefix": "app-lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/lpc-lib/ng-package.json"
+            "project": "projects/app-lib/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/lpc-lib/tsconfig.lib.prod.json"
+              "tsConfig": "projects/app-lib/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/lpc-lib/tsconfig.lib.json"
+              "tsConfig": "projects/app-lib/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -27,13 +27,44 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/lpc-lib/src/test.ts",
-            "tsConfig": "projects/lpc-lib/tsconfig.spec.json",
-            "karmaConfig": "projects/lpc-lib/karma.conf.js"
+            "main": "projects/app-lib/src/test.ts",
+            "tsConfig": "projects/app-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/app-lib/karma.conf.js"
+          }
+        }
+      }
+    },
+    "app-lib-core": {
+      "projectType": "library",
+      "root": "projects/app-lib-core",
+      "sourceRoot": "projects/app-lib-core/src",
+      "prefix": "app-lib-core",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/app-lib-core/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/app-lib-core/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/app-lib-core/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/app-lib-core/src/test.ts",
+            "tsConfig": "projects/app-lib-core/tsconfig.spec.json",
+            "karmaConfig": "projects/app-lib-core/karma.conf.js"
           }
         }
       }
     }
   },
-  "defaultProject": "lpc-lib"
+  "defaultProject": "app-lib"
 }
