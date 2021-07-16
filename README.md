@@ -7,7 +7,7 @@ Criar o projeto sem criar a aplicação, e sem os arquivos de teste
 
 ### criar uma biblioteca dentro do projeto
 
-' Cria-se a biblioteca dentro da pasta do projeto criado:
+Cria-se a biblioteca dentro da pasta do projeto criado:
 `ng g library app-lib --skip-install --prefix app-lib`
 `ng g library app-lib-core --skip-install --prefix app-lib-core`
 
@@ -18,24 +18,26 @@ remover o conteúdo da pasta lib dentro a biblioteca criada
 `cd app-lib-core`
 
 corrigir as informações dos "paths" no arquivo tsconfig.json
-' "paths": {
-' "@app/app-lib/_": [
-' "projects/app-lib/app-lib/_",
-' "projects/app-lib"
-' ],
-' "@app/app-lib": [
-' "dist/app-lib/app-lib/*",
-' "dist/app-lib"
-' ],
-' "@app/app-lib-core/_": [
-' "projects/app-lib-core/app-lib-core/_",
-' "projects/app-lib-core"
-' ],
-' "@app/app-lib-core": [
-' "dist/app-lib-core/app-lib-core/*",
-' "dist/app-lib-core"
-' ]
-' },
+
+> "paths": {
+> "@app/app-lib/_": [
+> "projects/app-lib/app-lib/_",
+> "projects/app-lib"
+> ],
+> "@app/app-lib": [
+>
+> > "dist/app-lib/app-lib/_",
+> > "dist/app-lib"
+> > ],
+> > "@app/app-lib-core/*": [
+> > "projects/app-lib-core/app-lib-core/*",
+> > "projects/app-lib-core"
+> > ],
+> > "@app/app-lib-core": [
+> > "dist/app-lib-core/app-lib-core/_",
+> > "dist/app-lib-core"
+> > ]
+> > },
 
 ### criando uma feature para uma biblioteca
 
@@ -70,14 +72,15 @@ caso contrário será necessário informar o nome da biblioteca que se deseja co
 `ng build app-lib-core`
 
 ou alterar o arquivo 'angular.json' adicionando as bibliotecas que se deseja compilar com o comando 'ng build'
-' "scripts": {
-' "ng": "ng",
-' "start": "ng serve",
-' "build": "ng build app-lib && ng build app-lib-core",
-' "build-all-prod": "ng build app-lib --prod && ng build app-lib-core --prod ",
-' "watch": "ng build --watch --configuration development",
-' "test": "ng test"
-' },
+
+> "scripts": {
+> "ng": "ng",
+> "start": "ng serve",
+> "build": "ng build app-lib && ng build app-lib-core",
+> "build-all-prod": "ng build app-lib --prod && ng build app-lib-core --prod ",
+> "watch": "ng build --watch --configuration development",
+> "test": "ng test"
+> },
 
 ### References
 
