@@ -61,6 +61,24 @@ criando a feature c
 criando um service no feature c
 `ng g s .\src\lib\feature-c\c`
 
+### compilar a biblioteca
+
+se houver apenas uma biblioteca basta executar o comando
+`ng build`
+
+caso contrário será necessário informar o nome da biblioteca que se deseja compilar
+`ng build app-lib-core`
+
+ou alterar o arquivo 'angular.json' adicionando as bibliotecas que se deseja compilar com o comando 'ng build'
+' "scripts": {
+' "ng": "ng",
+' "start": "ng serve",
+' "build": "ng build app-lib && ng build app-lib-core",
+' "build-all-prod": "ng build app-lib --prod && ng build app-lib-core --prod ",
+' "watch": "ng build --watch --configuration development",
+' "test": "ng test"
+' },
+
 ### References
 
 https://tomastrajan.medium.com/the-best-way-to-architect-your-angular-libraries-87959301d3d3
